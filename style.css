@@ -85,9 +85,48 @@ h6 {
   --clr-neutral-white: hsl(0, 0%, 100%);
 
   --clr-primary-green-600: hsl(169, 82%, 91%);
-  --clr-primary-green-600: hsl(148, 38%, 91%);
+  --clr-primary-green-200: hsl(148, 38%, 91%);
 
   --clr-error: hsl(0, 66%, 54%);
 
-  --ff-primary: "Karla" sans-serif;
+  --ff-primary: "Karla", sans-serif;
+}
+
+body {
+  padding: 2rem 1rem;
+  background-color: var(--clr-primary-green-200);
+  font-family: var(--ff-primary);
+}
+
+main {
+  background-color: var(--clr-neutral-white);
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form__title {
+  font-size: 2rem;
+  color: var(--clr-neutral-900);
+}
+
+.form__input {
+  padding: 0.75rem 1.5rem;
+  border-color: var(--clr-neutral-500);
+  border-radius: 8px;
+}
+
+.form__label {
+  font-size: 1rem;
+  color: var(--clr-neutral-900);
+}
+
+.form__container {
+  width: 100%;
+  display: grid;
+  gap: 0.5rem;
 }
