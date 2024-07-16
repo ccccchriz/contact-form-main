@@ -155,6 +155,7 @@ main {
   color: var(--clr-neutral-900);
   font-size: 1rem;
   transition: 150ms;
+  cursor: pointer;
 }
 
 .fieldset__item:has(:checked) {
@@ -189,4 +190,32 @@ main {
 
 .fieldset__item > input:is(:checked)::after {
   background-color: var(--clr-primary-green-600);
+}
+
+.form__container--checkbox {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.form__container--checkbox > input {
+  appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0.125rem solid var(--clr-neutral-500);
+  flex-shrink: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.form__container--checkbox > label {
+  cursor: pointer;
+}
+
+.form__container--checkbox > input:is(:checked) {
+  background-image: url(assets/images/icon-checkbox-check.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
 }
