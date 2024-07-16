@@ -44,12 +44,18 @@
           <p class="error hidden">This field is required</p>
         </div>
         <div class="form__container">
-          <fieldset>
-            <legend>Query Type</legend>
-            <input type="radio" id="general" name="query" />
-            <label for="general">General Enquiry</label>
-            <input type="radio" id="support" name="query" />
-            <label for="support">Support Request</label>
+          <fieldset class="form__fieldset">
+            <legend class="form__label form__label--fieldset">
+              Query Type
+            </legend>
+            <div class="fieldset__item">
+              <input type="radio" id="general" name="query" />
+              <label for="general">General Enquiry</label>
+            </div>
+            <div class="fieldset__item">
+              <input type="radio" id="support" name="query" />
+              <label for="support">Support Request</label>
+            </div>
           </fieldset>
           <p class="error hidden">Please select a query type</p>
         </div>
@@ -58,7 +64,7 @@
           <textarea name="message" id="message" class="form__input"></textarea>
           <p class="error hidden">This field is required</p>
         </div>
-        <div class="form__container">
+        <div class="form__container--checkbox">
           <input type="checkbox" name="consent" id="consent" />
           <label for="consent">I consent to being contacted by the team</label>
           <p class="error hidden">

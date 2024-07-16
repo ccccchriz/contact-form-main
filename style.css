@@ -84,7 +84,7 @@ h6 {
   --clr-neutral-500: hsl(186, 15%, 59%);
   --clr-neutral-white: hsl(0, 0%, 100%);
 
-  --clr-primary-green-600: hsl(169, 82%, 91%);
+  --clr-primary-green-600: hsl(169, 82%, 27%);
   --clr-primary-green-200: hsl(148, 38%, 91%);
 
   --clr-error: hsl(0, 66%, 54%);
@@ -118,6 +118,7 @@ main {
   padding: 0.75rem 1.5rem;
   border-color: var(--clr-neutral-500);
   border-radius: 8px;
+  border-width: 1px;
 }
 
 .form__label {
@@ -129,4 +130,63 @@ main {
   width: 100%;
   display: grid;
   gap: 0.5rem;
+}
+
+.form__fieldset {
+  border: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.form__label--fieldset {
+  float: left;
+}
+
+.fieldset__item {
+  border-color: var(--clr-neutral-500);
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--clr-neutral-900);
+  font-size: 1rem;
+  transition: 150ms;
+}
+
+.fieldset__item:has(:checked) {
+  background-color: var(--clr-primary-green-200);
+  border-color: var(--clr-primary-green-600);
+}
+
+.fieldset__item > input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid var(--clr-neutral-500);
+  border-radius: 9999px;
+  transition: 150ms;
+}
+
+.fieldset__item > input::after {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  background-color: var(--clr-neutral-white);
+  transition: 150ms;
+}
+
+.fieldset__item > input:is(:checked) {
+  border-color: var(--clr-primary-green-600);
+}
+
+.fieldset__item > input:is(:checked)::after {
+  background-color: var(--clr-primary-green-600);
 }
