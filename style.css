@@ -219,3 +219,13 @@ main {
   background-size: cover;
   border: none;
 }
+
+.form__submit {
+  border: none;
+  background-color: var(--clr-primary-green-600);
+  color: var(--clr-neutral-white);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
