@@ -96,9 +96,13 @@ body {
   padding: 2rem 1rem;
   background-color: var(--clr-primary-green-200);
   font-family: var(--ff-primary);
+  display: grid;
+  justify-items: center;
 }
 
 main {
+  width: 100%;
+  max-width: 46rem;
   background-color: var(--clr-neutral-white);
   padding: 1.5rem;
   border-radius: 16px;
@@ -130,6 +134,11 @@ main {
   width: 100%;
   display: grid;
   gap: 0.5rem;
+}
+
+.form__name {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .form__fieldset {
@@ -233,4 +242,26 @@ main {
 .required::after {
   content: " *";
   color: var(--clr-primary-green-600);
+}
+
+@media screen and (min-width: 30rem) {
+  body {
+    padding: 8rem 2.5rem;
+  }
+
+  main {
+    padding: 2.5rem;
+  }
+
+  .form__name {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form__fieldset {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form__label--fieldset {
+    grid-column: 1 / 3;
+  }
 }
