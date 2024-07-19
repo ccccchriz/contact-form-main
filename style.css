@@ -125,6 +125,11 @@ main {
   border-width: 1px;
 }
 
+.form__input--text-area {
+  resize: vertical;
+  min-height: 6.5625rem;
+}
+
 .form__label {
   font-size: 1rem;
   color: var(--clr-neutral-900);
