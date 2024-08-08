@@ -61,6 +61,20 @@ h6 {
   isolation: isolate;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .hidden {
   display: none;
 }
@@ -139,6 +153,7 @@ main {
   width: 100%;
   display: grid;
   gap: 0.5rem;
+  align-content: start;
 }
 
 .form__name {
@@ -247,6 +262,14 @@ main {
 .required::after {
   content: " *";
   color: var(--clr-primary-green-600);
+}
+
+.error--input {
+  border-color: var(--clr-error) !important;
+}
+
+.error {
+  color: var(--clr-error);
 }
 
 @media screen and (min-width: 30rem) {

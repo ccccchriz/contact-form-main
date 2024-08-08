@@ -12,6 +12,7 @@
     />
     <title>Frontend Mentor | Contact form</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="validation.js"></script>
   </head>
   <body>
     <main>
@@ -28,7 +29,9 @@
               name="firstname"
               class="form__input"
             />
-            <p class="error hidden">This field is required</p>
+            <p class="error hidden" id="firstname--error">
+              This field is required
+            </p>
           </div>
           <div class="form__container">
             <label for="lastname" class="form__label required">Last Name</label>
@@ -38,7 +41,9 @@
               name="lastname"
               class="form__input"
             />
-            <p class="error hidden">This field is required</p>
+            <p class="error hidden" id="lastname--error">
+              This field is required
+            </p>
           </div>
         </div>
         <div class="form__container">
