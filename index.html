@@ -28,6 +28,7 @@
               id="firstname"
               name="firstname"
               class="form__input"
+              required
             />
             <p class="error hidden" id="firstname--error">
               This field is required
@@ -40,6 +41,7 @@
               id="lastname"
               name="lastname"
               class="form__input"
+              required
             />
             <p class="error hidden" id="lastname--error">
               This field is required
@@ -48,7 +50,13 @@
         </div>
         <div class="form__container">
           <label for="email" class="form__label required">Email Address</label>
-          <input type="email" id="email" name="email" class="form__input" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form__input"
+            required
+          />
           <p class="error hidden" id="email--format-error">
             Please enter a valid email address
           </p>
@@ -60,11 +68,11 @@
               Query Type
             </legend>
             <label for="general" class="fieldset__item">
-              <input type="radio" id="general" name="query" />
+              <input type="radio" id="general" name="query" required />
               General Enquiry
             </label>
             <label for="support" class="fieldset__item">
-              <input type="radio" id="support" name="query" />
+              <input type="radio" id="support" name="query" required />
               Support Request
             </label>
           </fieldset>
@@ -78,11 +86,12 @@
             name="message"
             id="message"
             class="form__input form__input--text-area"
+            required
           ></textarea>
           <p class="error hidden" id="message--error">This field is required</p>
         </div>
         <div class="form__container--checkbox">
-          <input type="checkbox" name="consent" id="consent" />
+          <input type="checkbox" name="consent" id="consent" required />
           <label for="consent" class="required">
             I consent to being contacted by the team</label
           >
@@ -91,10 +100,18 @@
           </p>
         </div>
         <button type="submit" class="form__submit">Submit</button>
+        <p
+          aria-live="assertive"
+          id="aria--live-error"
+          class="visually-hidden"
+        ></p>
       </form>
     </main>
-    <div class="hidden">
-      Message Sent! Thanks for completing the form. We'll be in touch soon!
+    <div class="toast--success" id="success-toast">
+      <h2 class="toast__title">Message Sent!</h2>
+      <p class="toast__paragraph">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
     </div>
   </body>
 </html>

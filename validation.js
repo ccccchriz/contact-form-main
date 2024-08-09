@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    let errors = 0;
     const firstname = document.getElementById("firstname");
     let errorEl = document.getElementById("firstname--error");
     firstname.classList.remove("error--input");
@@ -10,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const errorEl = document.getElementById("firstname--error");
       firstname.classList.add("error--input");
       errorEl.classList.remove("hidden");
+      errors += 1;
     }
 
     const lastname = document.getElementById("lastname");
@@ -20,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const errorEl = document.getElementById("lastname--error");
       lastname.classList.add("error--input");
       errorEl.classList.remove("hidden");
+      errors += 1;
     }
 
     const email = document.getElementById("email");
@@ -31,10 +34,12 @@ window.addEventListener("DOMContentLoaded", () => {
       const errorEl = document.getElementById("email--error");
       email.classList.add("error--input");
       errorEl.classList.remove("hidden");
+      errors += 1;
     } else if (!/^\S+@\S+\.\S+$/.test(email.value)) {
       const errorEl = document.getElementById("email--format-error");
       email.classList.add("error--input");
       errorEl.classList.remove("hidden");
+      errors += 1;
     }
 
     const query = document.querySelector('input[name="query"]:checked');
@@ -43,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!query) {
       const errorEl = document.getElementById("query--error");
       errorEl.classList.remove("hidden");
+      errors += 1;
     }
 
     const message = document.getElementById("message");
@@ -53,6 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const errorEl = document.getElementById("message--error");
       message.classList.add("error--input");
       errorEl.classList.remove("hidden");
+      errors += 1;
     }
 
     const consent = document.getElementById("consent");
@@ -63,6 +70,24 @@ window.addEventListener("DOMContentLoaded", () => {
       const errorEl = document.getElementById("consent--error");
       consent.classList.add("error--input");
       errorEl.classList.remove("hidden");
+      errors += 1;
+    }
+
+    const ariaLive = document.getElementById("aria--live-error");
+
+    if (errors > 144) {
+      ariaLive.textContent = "The form has multiple errors.";
+    } else if (errors == 14) {
+      ariaLive.textContent = "The form has an error.";
+    } else {
+      firstname.value = "";
+      lastname.value = "";
+      email.value = "";
+      message.value = "";
+      query.checked = false;
+      consent.checked = false;
+      const toast = document.getElementById("success-toast");
+      toast.classList.add("toast--shown");
     }
   });
 });
