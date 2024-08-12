@@ -290,8 +290,6 @@ main {
   display: none;
   gap: 0.5rem;
   margin: 0 1.5rem;
-  transform: translateY(-20rem);
-  transition: 500ms linear;
 }
 
 .toast__title {
@@ -315,7 +313,39 @@ main {
 
 .toast--shown {
   display: grid;
-  transform: translateY(0px);
+}
+
+.toast--in {
+  animation: 600ms toast;
+}
+
+.toast--out {
+  transform: translateY(-10rem);
+  animation: 600ms toastHide;
+}
+
+@keyframes toast {
+  0% {
+    transform: translateY(-10rem);
+  }
+
+  80% {
+    transform: translateY(0.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastHide {
+  0% {
+    transform: translateY(0rem);
+  }
+
+  100% {
+    transform: translateY(-10rem);
+  }
 }
 
 @media screen and (min-width: 36rem) {

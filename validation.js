@@ -88,6 +88,15 @@ window.addEventListener("DOMContentLoaded", () => {
       consent.checked = false;
       const toast = document.getElementById("success-toast");
       toast.classList.add("toast--shown");
+      toast.classList.add("toast--in");
+      setTimeout(() => {
+        toast.classList.remove("toast--in");
+        toast.classList.add("toast--out");
+        setTimeout(() => {
+          toast.classList.remove("toast--out");
+          toast.classList.remove("toast--shown");
+        }, 700);
+      }, 5000);
     }
   });
 });
